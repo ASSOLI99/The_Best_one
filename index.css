@@ -1,0 +1,116 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    PADDING: 250PX;
+    background-color:#2e3e48;;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    PADDING: 250PX;
+}
+.left{
+    background-color: #a6eeee;
+    width: 300px;
+    height: 500px;
+    margin: 0 5px 0 0;
+    position: relative;
+}
+.right{
+    background-color: #90c0c0;
+    width: 75px;
+    height: 500px;
+    position: relative;
+
+}
+.left::after{
+    content: "";
+    background-color: #2e3e48 ;
+    width: 225px;
+    height: 150px;
+    position: absolute;
+    top: 75px;
+    right: 0px;
+}
+.left::before{
+    content: "";
+    background-color: #2e3e48;
+    width: 225px;
+    height: 200px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.left-box{
+    background-color: #2e3e48;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    opacity: 0%;
+    animation-name: moving-left;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+
+}
+.right-box{
+    background-color: #2e3e48;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    animation-name: moving-right;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.71, 0.03, 0.27, 1.02);
+    animation-iteration-count: 2;
+    animation-delay: 2.5s;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+ 
+}
+@keyframes moving-right{
+    0%{
+        transform: translateY(13px);
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(430px);
+        opacity: 0.8;
+    }
+}
+@keyframes moving-left{
+0%{
+    transform: translate(240px,10px);
+}
+20%{
+    transform: translate(10px,10px);
+
+    opacity: 1;
+}
+40%{
+    transform: translate(10px,240px);
+
+    opacity: 1;
+}
+60%{
+    transform: translate(240px,240px);
+    opacity: 1;
+}
+80%{
+    transform: translate(10px,240px);
+    opacity: 1;
+}
+100%{
+    transform: translate(10px,440px);
+
+    opacity: 1;
+}
+}
